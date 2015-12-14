@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Raspberry Pi Control</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 13px Helvetica, Arial; }
+      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+    </style>
+  </head>
+  <body>
+	  <h1>ROBOT CONTROL</h1>
+	  <p><br></p>
+	  <p><input type="button" value="Left" id="left"/></p>
+	  <p><input type="button" value="Right" id="right"</p>
+	  <p><input type="button" value="Forward" id="forward"/></p>
+	  <p><input type="button" value="Back" id="back"</p>
+	  
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+	<script>
+		var socket = io()
+			
+		$('#left').click(function(){
+			socket.emit('Left') 
+		})
+		
+		$('#right').click(function(){
+			socket.emit('Right')
+		})
+		
+		$('#forward').click(function(){
+			socket.emit('Forward')
+		})
+		
+		$('#back').click(function(){
+			socket.emit('Back')
+		})
+		
+	</script>
+  </body>
+</html>
