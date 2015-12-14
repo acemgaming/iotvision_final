@@ -1,0 +1,12 @@
+Right
+Forward
+Left
+Forward
+Left
+Forward
+Right
+Forward
+Right
+Forward
+Forward
+Left
