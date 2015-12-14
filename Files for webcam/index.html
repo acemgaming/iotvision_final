@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Webcam Control</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 13px Helvetica, Arial; }
+      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+    </style>
+  </head>
+  <body>
+	  <h1>Webcam Control</h1>
+	  <p><<img src="/images/testimg.png" alt="Test Picture", id="testimg"</p>
+	  
+	<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+	<script>
+	
+		var socket = io()
+		
+		socket.on('update_img', function(url){
+			$('#testimg').attr('src', url);
+		})
+		
+	</script>
+  </body>
+</html>
